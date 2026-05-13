@@ -41,6 +41,101 @@
       z-index: 0;
       pointer-events: none;
     }
+    
+    /* ── BOTPRESS NEON BUTTON ── */
+    .chat-neon-wrapper {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.6rem;
+    }
+
+    .chat-neon-label {
+      background: var(--blue);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      box-shadow: 0 0 20px var(--blue-glow), 0 0 40px rgba(35,35,255,0.3);
+      animation: neon-flicker 6s ease-in-out infinite;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.03em;
+    }
+
+    .chat-neon-label::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      right: 18px;
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--blue);
+    }
+
+    .chat-neon-btn {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px var(--blue-glow), 0 4px 20px rgba(35,35,255,0.5);
+      animation: neon-flicker 6s ease-in-out infinite 1s;
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+
+    .chat-neon-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .chat-neon-btn svg {
+      width: 28px; height: 28px;
+      fill: white;
+    }
+
+    /* Botpress iframe modal */
+    .bot-modal {
+      display: none;
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      width: 380px;
+      height: 520px;
+      z-index: 1000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(35,35,255,0.4), 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(35,35,255,0.3);
+    }
+
+    .bot-modal.open { display: block; }
+
+    .bot-modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 480px) {
+      .bot-modal {
+        width: calc(100vw - 2rem);
+        right: 1rem;
+        height: 70vh;
+      }
+    }
+
 
     /* ── NAV ── */
     nav {
@@ -553,7 +648,7 @@
     .wa-float {
       position: fixed;
       bottom: 2rem;
-      right: 2rem;
+      left: 2rem;
       z-index: 999;
       background: #25D366;
       width: 60px; height: 60px;
@@ -638,6 +733,24 @@
 
 <!-- Particles Canvas -->
 <canvas id="particles"></canvas>
+
+<!-- Botpress Chat Modal -->
+<div class="bot-modal" id="botModal">
+  <iframe 
+    src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/13/14/20260513142611-X7KVQ8MT.json"
+    title="Chat Profes al Rescate">
+  </iframe>
+</div>
+
+<!-- Neon Chat Button -->
+<div class="chat-neon-wrapper">
+  <button class="chat-neon-label" onclick="toggleBot()">💬 ¡Despejá tus dudas ya!</button>
+  <button class="chat-neon-btn" onclick="toggleBot()" title="Hablar con el asistente">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+    </svg>
+  </button>
+</div>
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.link/jw4qgl" target="_blank" class="wa-float" title="Contactanos por WhatsApp">
@@ -984,17 +1097,28 @@
       nav.style.borderBottomColor = 'rgba(35,35,255,0.15)';
     }
   });
-</script>
-
-
-  <!-- Botpress Webchat -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-  <script>
+</script>  <script>
     botpress.init({
       clientId: "2095fb40-c2c9-4249-9651-3c7d8a7e7dbe",
       configUrl: "https://files.bpcontent.cloud/2026/05/13/14/20260513142611-X7KVQ8MT.json"
     });
   </script>
+
+
+<script>
+  function toggleBot() {
+    const modal = document.getElementById('botModal');
+    modal.classList.toggle('open');
+  }
+  // Close on click outside
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('botModal');
+    const btn = document.querySelector('.chat-neon-wrapper');
+    if (modal.classList.contains('open') && !modal.contains(e.target) && !btn.contains(e.target)) {
+      modal.classList.remove('open');
+    }
+  });
+</script>
 
 </body>
 </html>
