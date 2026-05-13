@@ -1,38 +1,979 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profes al Rescate | El impulso que necesitás</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .neon-blue { color: #2323FF; text-shadow: 0 0 10px rgba(35, 35, 255, 0.4); }
-        .bg-dark { background-color: #0a0a0a; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profes al Rescate | El impulso que necesitás para terminar tu tesis</title>
+  <meta name="description" content="Corrección, asesoramiento metodológico y acompañamiento académico para estudiantes universitarios y terciarios. Tu tesis, nuestra misión.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #2323FF;
+      --blue-light: #4545FF;
+      --blue-glow: #2323ffaa;
+      --white: #FFFFFF;
+      --off-white: #F0F0FF;
+      --dark: #050510;
+      --dark2: #0a0a1a;
+      --dark3: #0f0f28;
+      --gray: #8888bb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── CANVAS PARTICLES ── */
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      backdrop-filter: blur(16px);
+      background: rgba(5,5,16,0.7);
+      border-bottom: 1px solid rgba(35,35,255,0.15);
+      transition: all 0.3s;
+    }
+
+    nav .logo-nav img {
+      height: 44px;
+      filter: drop-shadow(0 0 8px var(--blue-glow));
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--white); }
+
+    .btn-nav {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.5rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      box-shadow: 0 0 20px var(--blue-glow);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .btn-nav:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px var(--blue-glow) !important;
+      color: var(--white) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg-ring {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(35,35,255,0.2);
+      animation: pulse-ring 4s ease-in-out infinite;
+    }
+    .hero-bg-ring:nth-child(2) { width: 900px; height: 900px; animation-delay: 1s; opacity: 0.5; }
+    .hero-bg-ring:nth-child(3) { width: 1100px; height: 1100px; animation-delay: 2s; opacity: 0.25; }
+
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.03); opacity: 0.8; }
+    }
+
+    .hero-logo {
+      width: 180px;
+      margin-bottom: 2rem;
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px var(--blue-glow));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(35,35,255,0.15);
+      border: 1px solid rgba(35,35,255,0.4);
+      color: #8888ff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fade-up 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      animation: fade-up 0.7s ease 0.1s both;
+    }
+
+    .hero h1 .accent {
+      color: var(--blue);
+      text-shadow: 0 0 40px var(--blue-glow), 0 0 80px rgba(35,35,255,0.3);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--gray);
+      max-width: 600px;
+      line-height: 1.7;
+      margin: 1.5rem auto;
+      animation: fade-up 0.7s ease 0.2s both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+      animation: fade-up 0.7s ease 0.3s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 0 30px var(--blue-glow), 0 4px 20px rgba(35,35,255,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--blue-glow), 0 8px 30px rgba(35,35,255,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      background: rgba(35,35,255,0.1);
+    }
+
+    .hero-scroll {
+      margin-top: 4rem;
+      animation: bounce 2s ease-in-out infinite;
+      color: var(--gray);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── STATS TICKER ── */
+    .ticker {
+      position: relative;
+      z-index: 1;
+      background: var(--blue);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 0;
+      animation: ticker-scroll 30s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      padding: 0 2.5rem;
+    }
+
+    .ticker-dot { color: rgba(255,255,255,0.5); font-size: 1.4rem; }
+
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── PAIN CARDS ── */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .pain-card {
+      background: var(--dark2);
+      border: 1px solid rgba(35,35,255,0.15);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .pain-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .pain-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 40px rgba(35,35,255,0.2);
+    }
+
+    .pain-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .pain-card h3 {
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ── SERVICES ── */
+    .services-bg {
+      background: var(--dark2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--dark);
+      border: 1px solid rgba(35,35,255,0.2);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .service-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card:hover {
+      box-shadow: 0 20px 60px rgba(35,35,255,0.15);
+    }
+
+    .service-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(35,35,255,0.15);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card h3 {
+      font-weight: 900;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-left: 2px solid rgba(35,35,255,0.2);
+      padding-left: 2rem;
+      margin-left: 30px;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .step.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .step-dot {
+      position: absolute;
+      left: -16px;
+      top: 2rem;
+      width: 30px; height: 30px;
+      background: var(--dark);
+      border: 3px solid var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.9rem;
+      color: var(--blue);
+      box-shadow: 0 0 15px var(--blue-glow);
+    }
+
+    .step-content h3 {
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-content p {
+      color: var(--gray);
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial {
+      background: var(--dark2);
+      border: 1px solid rgba(35,35,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .testimonial.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .testimonial-stars {
+      color: var(--blue);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--off-white);
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* ── TALLY SECTION ── */
+    .tally-section {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      border-top: 1px solid rgba(35,35,255,0.2);
+      border-bottom: 1px solid rgba(35,35,255,0.2);
+    }
+
+    .tally-wrapper {
+      background: var(--dark2);
+      border: 1px solid rgba(35,35,255,0.25);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 0 60px rgba(35,35,255,0.1);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      background: #25D366;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      animation: wa-pulse 2.5s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+
+    .wa-float:hover { transform: scale(1.1); }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.1); }
+    }
+
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--dark);
+      border-top: 1px solid rgba(35,35,255,0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    footer img {
+      height: 60px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 10px var(--blue-glow));
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    footer .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover { color: var(--white); }
+
+    footer p {
+      color: rgba(136,136,187,0.5);
+      font-size: 0.8rem;
+    }
+
+    /* ── GLOW DIVIDER ── */
+    .glow-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      margin: 0;
+      opacity: 0.4;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      .section { padding: 4rem 1.5rem; }
+      .tally-wrapper { padding: 2rem 1rem; }
+    }
+  </style>
 </head>
-<body class="bg-dark text-white font-sans">
+<body>
 
-    <nav class="p-8 flex justify-center">
-        <h1 class="text-4xl font-bold neon-blue tracking-tighter">PROFES AL RESCATE</h1>
-    </nav>
+<!-- Particles Canvas -->
+<canvas id="particles"></canvas>
 
-    <main class="max-w-4xl mx-auto px-4 py-8">
-        
-        <div class="text-center mb-12">
-            <h2 class="text-5xl font-extrabold mb-4">¿Tu tesis te tiene acorralado?</h2>
-            <p class="text-xl text-gray-400">No tires la toalla. Tu rescate académico empieza acá abajo.</p>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.link/jw4qgl" target="_blank" class="wa-float" title="Contactanos por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="logo-nav">
+    <img src="assets/logo.png" alt="Profes al Rescate" />
+  </a>
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto" class="btn-nav">¡Pedir ayuda!</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-bg-ring"></div>
+  <div class="hero-bg-ring"></div>
+  <div class="hero-bg-ring"></div>
+
+  <img src="assets/logo.png" alt="Profes al Rescate Logo" class="hero-logo" />
+
+  <div class="hero-badge">
+    🚨 Tesis, tesinas y trabajos finales
+  </div>
+
+  <h1>
+    El impulso que<br>
+    <span class="accent">necesitás</span>
+  </h1>
+
+  <p class="hero-sub">
+    Estás a una consulta de terminar tu tesis.<br>
+    Corrección, metodología, normas APA y acompañamiento personalizado para estudiantes universitarios y terciarios de Argentina.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#contacto" class="btn-primary">
+      🆘 Pedir ayuda ahora
+    </a>
+    <a href="#servicios" class="btn-secondary">
+      Ver qué hacemos
+    </a>
+  </div>
+
+  <div class="hero-scroll">
+    ↓ &nbsp; Seguí bajando
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker-track">
+    <!-- duplicated for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot">✦</span> CORRECCIÓN ORTOTIPOGRÁFICA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> NORMAS APA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> ASESORAMIENTO METODOLÓGICO</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> REDACCIÓN ACADÉMICA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> PREPARACIÓN PARA LA DEFENSA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> ESTRUCTURACIÓN DE TESIS</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> CORRECCIÓN ORTOTIPOGRÁFICA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> NORMAS APA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> ASESORAMIENTO METODOLÓGICO</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> REDACCIÓN ACADÉMICA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> PREPARACIÓN PARA LA DEFENSA</span>
+    <span class="ticker-item"><span class="ticker-dot">✦</span> ESTRUCTURACIÓN DE TESIS</span>
+  </div>
+</div>
+
+<!-- ── PROBLEM ── -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">¿Te suena familiar?</span>
+    <h2>¿POR QUÉ<br><span style="color:var(--blue)">ESTÁS FRENADO?</span></h2>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-emoji">😩</span>
+        <h3>Estás atascado en el mismo capítulo</h3>
+        <p>Llevás semanas dando vueltas sin avanzar. Cada vez que abrís el documento, cerrás.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-emoji">😰</span>
+        <h3>No entendés las Normas APA</h3>
+        <p>Las citas, las referencias, los márgenes... todo se mezcla y no sabés si lo estás haciendo bien.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-emoji">🤯</span>
+        <h3>Tu metodología no cierra</h3>
+        <p>El director te marca observaciones pero no sabés cómo resolverlas sin romper todo el trabajo.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-emoji">📅</span>
+        <h3>El tiempo se acaba</h3>
+        <p>La fecha de entrega se acerca y seguís sin entregar. La presión es insoportable.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-emoji">🗣️</span>
+        <h3>Le tenés miedo a la defensa</h3>
+        <p>Escribir es una cosa, pero pararte frente al tribunal y defender tu trabajo es otra historia.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-emoji">🔍</span>
+        <h3>No encontrás bibliografía sólida</h3>
+        <p>Buscás y buscás pero no sabés qué fuentes usar ni cómo citarlas correctamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── SERVICES ── -->
+<section class="section services-bg" id="servicios">
+  <div class="container">
+    <span class="section-label">Lo que hacemos</span>
+    <h2>NUESTROS<br><span style="color:var(--blue)">SERVICIOS</span></h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <h3>Corrección Ortotipográfica y de Estilo</h3>
+        <p>Revisamos cada coma, cada acento, cada punto. Tu tesis va a quedar impecable antes de llegar al tribunal.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3>Asesoramiento Metodológico</h3>
+        <p>Marco teórico, objetivos, hipótesis, diseño de investigación. Te guiamos para que tu metodología sea sólida y coherente.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3>Normas APA y Formato Académico</h3>
+        <p>Citas, referencias bibliográficas, márgenes, interlineado. Aplicamos los estándares correctamente para que no te devuelvan nada.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <h3>Estructuración y Coherencia</h3>
+        <p>Reorganizamos tu trabajo para que haya un hilo conductor lógico entre la introducción y las conclusiones.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <h3>Preparación para la Defensa</h3>
+        <p>Ensayo de presentación, anticipación de preguntas del tribunal, manejo de los nervios. Llegás con confianza.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <h3>Acompañamiento Personalizado</h3>
+        <p>No somos un servicio de corrección automática. Somos profesores que leen tu trabajo, te escuchan y te orientan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section" id="como-funciona">
+  <div class="container" style="text-align:center">
+    <span class="section-label">Simple y rápido</span>
+    <h2>¿CÓMO<br><span style="color:var(--blue)">FUNCIONA?</span></h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <div class="step-content">
+          <h3>Completás el formulario de rescate</h3>
+          <p>Nos contás en qué punto de tu tesis estás, qué necesitás y con qué urgencia. Solo te lleva 2 minutos.</p>
         </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-content">
+          <h3>Te contactamos en menos de 24 horas</h3>
+          <p>Un profe real se comunica con vos para entender tu situación y definir juntos el mejor camino.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-content">
+          <h3>Arrancamos con tu trabajo</h3>
+          <p>Revisión, corrección, orientación. Todo personalizado, sin automatizaciones, sin respuestas genéricas.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-content">
+          <h3>Entregás tu tesis con confianza</h3>
+          <p>Llegás a la entrega o la defensa sabiendo que tu trabajo está bien hecho y listo para brillar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-[#2323FF]">
-            
-            </div>
+<div class="glow-divider"></div>
 
-    </main>
+<!-- ── TESTIMONIALS ── -->
+<section class="section services-bg" id="testimonios">
+  <div class="container">
+    <span class="section-label">Lo que dicen nuestros alumnos</span>
+    <h2>HISTORIAS DE<br><span style="color:var(--blue)">RESCATE</span></h2>
 
-<footer class="text-center py-12 text-gray-600 text-sm">
-        &copy; 2026 Profes al Rescate. <br>
-        "El impulso que necesitás para terminar tu Tesis"
-    </footer>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Llevaba dos años bloqueada en el capítulo metodológico. En una semana con Profes al Rescate entendí lo que mi director no me había podido explicar en meses."</p>
+        <div class="testimonial-author">— Luciana M., Lic. en Trabajo Social · UBA</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"La corrección de APA fue un antes y un después. Pensé que iba a tener que rehacer todo, pero me guiaron paso a paso y quedó perfecto."</p>
+        <div class="testimonial-author">— Martín R., Lic. en Psicología · UNLa</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Me prepararon para la defensa de una manera que no esperaba. Llegué tranquilo, respondí todo, y aprobé con distinción."</p>
+        <div class="testimonial-author">— Florencia T., Lic. en Educación · UNLP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── TALLY FORM ── -->
+<section class="section tally-section" id="contacto">
+  <div class="container">
+    <span class="section-label">Primer paso</span>
+    <h2 style="text-align:center">🚨 PEDÍ TU<br><span style="color:var(--blue)">RESCATE</span></h2>
+    <p style="text-align:center; color:var(--gray); margin-top:1rem; max-width:500px; margin-left:auto; margin-right:auto;">
+      Completá el formulario y un profe real te va a contactar en menos de 24 horas. Sin costos ocultos, sin automatizaciones.
+    </p>
+
+    <div class="tally-wrapper">
+      <iframe data-tally-src="https://tally.so/embed/rjG17L?transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="🚨 ¡NUEVO RESCATE ACADÉMICO!"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <p style="color:var(--gray); font-size:0.9rem; margin-bottom:1rem;">¿Preferís el contacto directo?</p>
+      <a href="https://wa.link/jw4qgl" target="_blank" class="btn-primary" style="display:inline-flex;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Escribinos por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="assets/logo.png" alt="Profes al Rescate" />
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="https://www.instagram.com/profes_al_rescate/" target="_blank">Instagram</a>
+    <a href="https://wa.link/jw4qgl" target="_blank">WhatsApp</a>
+  </div>
+  <p>© 2026 Profes al Rescate · profesalrescate.com.ar</p>
+  <p style="margin-top:0.4rem;">El impulso que necesitás para terminar tu tesis.</p>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+  // Particles
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: -Math.random() * 0.4 - 0.1,
+      alpha: Math.random() * 0.5 + 0.1
+    };
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < 120; i++) particles.push(createParticle());
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(35,35,255,${p.alpha})`;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.y < -5) { p.y = H + 5; p.x = Math.random() * W; }
+    });
+    requestAnimationFrame(drawParticles);
+  }
+
+  resize();
+  initParticles();
+  drawParticles();
+  window.addEventListener('resize', () => { resize(); initParticles(); });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), entry.target.dataset.delay || 0);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pain-card, .service-card, .testimonial').forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 120;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.step').forEach((el, i) => {
+    el.dataset.delay = i * 150;
+    observer.observe(el);
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(5,5,16,0.95)';
+      nav.style.borderBottomColor = 'rgba(35,35,255,0.3)';
+    } else {
+      nav.style.background = 'rgba(5,5,16,0.7)';
+      nav.style.borderBottomColor = 'rgba(35,35,255,0.15)';
+    }
+  });
+</script>
 
 </body>
 </html>
