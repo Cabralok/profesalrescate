@@ -4,8 +4,8 @@
   <meta name="google-site-verification" content="sWP-xFH7NzZxQ2Rnjivl6TdRTBTsbnpPtBHVLrZleO0" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profes al Rescate | El impulso que necesitás para terminar tu tesis</title>
-  <meta name="description" content="Corrección, asesoramiento metodológico y acompañamiento académico para estudiantes universitarios y terciarios. Tu tesis, nuestra misión.">
+  <title>Corrección y Asesoría de Tesis en Argentina | Profes al Rescate</title>
+  <meta name="description" content="¿Necesitás corregir tu tesis en Argentina? Asesoría personalizada, normas APA 7, corrección de estilo y preparación para la defensa oral. Online para todo el país. ¡Consultá gratis!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -519,7 +519,7 @@
     .service-number {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 4rem;
-      color: rgba(35,35,255,0.15);
+      color: rgba(35,35,255,0.45);
       line-height: 1;
       margin-bottom: 0.5rem;
     }
@@ -593,6 +593,86 @@
       color: var(--gray);
       line-height: 1.6;
       font-size: 0.9rem;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      margin-top: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: var(--dark2);
+      border: 1px solid rgba(35,35,255,0.15);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(35,35,255,0.4);
+    }
+
+    .faq-item.open {
+      border-color: var(--blue);
+      box-shadow: 0 0 20px rgba(35,35,255,0.1);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+
+    .faq-q:hover { color: var(--blue); }
+    .faq-item.open .faq-q { color: var(--blue); }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      color: var(--blue);
+      transition: transform 0.3s;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 1.5rem 1.25rem;
+    }
+
+    .faq-a p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
     /* ── TESTIMONIALS ── */
@@ -993,6 +1073,119 @@
 
 <div class="glow-divider"></div>
 
+<!-- ── FAQ ── -->
+<section class="section" id="preguntas-frecuentes">
+  <div class="container">
+    <span class="section-label">Todo lo que necesitás saber</span>
+    <h2>PREGUNTAS<br><span style="color:var(--blue)">FRECUENTES</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué servicios ofrece exactamente Profes al Rescate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ofrecemos asesoría educativa integral, corrección de estilo, aplicación de normas APA 7ma edición, redacción académica y tutorías personalizadas para anteproyectos, tesis de grado y trabajos de investigación. Cada servicio es 100% personalizado — sin automatizaciones ni respuestas genéricas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Cuánto cobra Profes al Rescate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Nuestros servicios comienzan desde $20.000 pesos argentinos, con precio final según la extensión del trabajo y el tipo de intervención requerida. Trabajamos con presupuestos personalizados para que pagues exactamente por lo que necesitás. Consultanos sin cargo por WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué pasa si mi tesis ya está empezada pero no puedo terminarla?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Podemos intervenir en cualquier etapa del proceso. Ofrecemos desde orientación estructural hasta trabajo de re-escritura académica para destrabar proyectos estancados. No importa si llevas meses bloqueado — arrancamos desde donde estás.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Cómo funciona Profes al Rescate si estoy en otra provincia?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>El servicio es 100% virtual, lo que permite recibir tutorías personalizadas y seguimiento constante sin moverte de tu casa, adaptándonos a tus tiempos. Atendemos a estudiantes de toda Argentina — Buenos Aires, Córdoba, Rosario, Mendoza, Tucumán y todo el interior del país.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Profes al Rescate ayuda con normas APA y citas bibliográficas?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sí, somos especialistas en la aplicación de normas APA 7ma edición y el manejo correcto de citas bibliográficas para asegurar que tu trabajo cumpla con los estándares de tu institución. También trabajamos con otras normas académicas según lo requiera tu carrera.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿En qué áreas de estudio se especializa Profes al Rescate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Aunque brindamos apoyo para cualquier carrera, nuestra mayor especialización se encuentra en las Ciencias Sociales y la Educación. También trabajamos frecuentemente con Derecho, Psicología, Administración, Comunicación y todas las humanidades.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Pueden escribir partes de mi tesis conmigo?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ofrecemos flexibilidad según tu necesidad: desde una supervisión externa hasta una co-creación y seguimiento profundo del desarrollo de la tesis. Cada proyecto se trabaja de forma personalizada para respetar tu voz académica y los requisitos de tu institución.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Cuánto tarda la corrección de una tesis en Profes al Rescate?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>La duración depende de la complejidad del trabajo y el nivel de avance. En general, una corrección completa toma entre 5 y 10 días hábiles. Si tenés una fecha de entrega urgente, consultanos — tenemos modalidad express disponible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Profes al Rescate ayuda con la defensa oral de la tesis?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sí. Preparamos a nuestros alumnos para la defensa oral con ensayos de presentación, anticipación de preguntas del tribunal y trabajo sobre el manejo de los nervios. Muchos estudiantes llegaron confiados y aprobaron con distinción gracias a esta preparación.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Por qué elegir Profes al Rescate frente a otros servicios?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Porque combinamos 30 años de experiencia real en el ámbito educativo con un enfoque humano y personalizado, transformando un proceso estresante en una experiencia de aprendizaje enriquecedora. No somos una plataforma automática — somos profesores reales que leen tu trabajo, te escuchan y te acompañan hasta que aprobés.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
 <!-- ── TALLY FORM ── -->
 <section class="section tally-section" id="contacto">
   <div class="container">
@@ -1024,6 +1217,7 @@
     <a href="#servicios">Servicios</a>
     <a href="#como-funciona">Cómo funciona</a>
     <a href="#testimonios">Testimonios</a>
+    <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
     <a href="https://www.instagram.com/profes_al_rescate/" target="_blank">Instagram</a>
     <a href="https://wa.link/jw4qgl" target="_blank">WhatsApp</a>
   </div>
@@ -1077,6 +1271,13 @@
   initParticles();
   drawParticles();
   window.addEventListener('resize', () => { resize(); initParticles(); });
+
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
 
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
