@@ -423,6 +423,108 @@
       margin: 0 auto;
     }
 
+    /* ── VALUE PROPOSITION ── */
+    .vp-section { background: var(--dark3); }
+
+    .vp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .vp-image-wrap {
+      position: relative;
+      border-radius: 24px;
+    }
+
+    .vp-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 45%, black 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 90% 85% at 50% 45%, black 55%, transparent 100%);
+      filter: drop-shadow(0 0 30px rgba(35,35,255,0.2));
+    }
+
+    .vp-image-badge {
+      position: absolute;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      background: var(--blue);
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 1.2;
+      box-shadow: 0 0 20px rgba(35,35,255,0.5);
+    }
+
+    .vp-content { }
+
+    .vp-subtitle {
+      color: var(--gray);
+      font-size: 1rem;
+      margin: 1rem 0 2rem;
+      line-height: 1.6;
+    }
+
+    .vp-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .vp-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--dark2);
+      border: 1px solid rgba(35,35,255,0.12);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .vp-card:hover {
+      border-color: rgba(35,35,255,0.4);
+      box-shadow: 0 4px 20px rgba(35,35,255,0.1);
+    }
+
+    .vp-card-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .vp-card-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .vp-card-text {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .vp-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .vp-image-wrap {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
+
     /* ── PAIN CARDS ── */
     .pain-grid {
       display: grid;
@@ -917,6 +1019,59 @@
     <span class="ticker-item"><span class="ticker-dot">✦</span> ESTRUCTURACIÓN DE TESIS</span>
   </div>
 </div>
+
+<!-- ── VALUE PROPOSITION ── -->
+<section class="section vp-section">
+  <div class="container">
+    <div class="vp-grid">
+
+      <div class="vp-image-wrap">
+        <img src="avatar_juntos_2025.png" alt="Rodolfo y Patricia — Profes al Rescate" class="vp-image" />
+        <div class="vp-image-badge">30 años de<br>experiencia</div>
+      </div>
+
+      <div class="vp-content">
+        <span class="section-label">¿Por qué elegirnos?</span>
+        <h2>TRANSFORMAMOS<br><span style="color:var(--blue)">EL CAOS DE TU<br>TESIS</span> EN UN<br>CAMINO CLARO</h2>
+        <p class="vp-subtitle">A un clic de distancia, con profesores reales que saben lo que los jurados evalúan.</p>
+
+        <div class="vp-cards">
+          <div class="vp-card">
+            <div class="vp-card-icon">🤝</div>
+            <div>
+              <div class="vp-card-title">Cero soledad — Equipo real</div>
+              <div class="vp-card-text">No entregamos archivos, formamos equipo con vos. Hay un profe real validando cada paso.</div>
+            </div>
+          </div>
+          <div class="vp-card">
+            <div class="vp-card-icon">🎓</div>
+            <div>
+              <div class="vp-card-title">3 décadas de experiencia académica</div>
+              <div class="vp-card-text">Sabemos exactamente qué evalúan los tribunales. Tu trabajo no solo estará bien escrito — estará aprobado.</div>
+            </div>
+          </div>
+          <div class="vp-card">
+            <div class="vp-card-icon">💻</div>
+            <div>
+              <div class="vp-card-title">100% virtual — A tu ritmo</div>
+              <div class="vp-card-text">Asesoría online diseñada para tu agenda, no para la nuestra. Sin moverte de casa, para toda Argentina.</div>
+            </div>
+          </div>
+          <div class="vp-card">
+            <div class="vp-card-icon">📚</div>
+            <div>
+              <div class="vp-card-title">Especialistas en Ciencias Sociales</div>
+              <div class="vp-card-text">Hablamos tu idioma académico. Marcos teóricos, metodología cualitativa, análisis complejo — es nuestro territorio.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
 
 <!-- ── PROBLEM ── -->
 <section class="section">
