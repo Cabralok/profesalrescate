@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="google-site-verification" content="sWP-xFH7NzZxQ2Rnjivl6TdRTBTsbnpPtBHVLrZleO0" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQP6FMPCZ0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQP6FMPCZ0');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Autonomía Perdida: Cómo la IA Destructiva Elimina las Capacidades que Construimos Escribiendo | Profes al Rescate</title>
+  <meta name="description" content="Análisis profundo sobre cómo la IA generativa destruye la autonomía intelectual en estudiantes universitarios. Un ensayo de Patricia Rodríguez y Rodolfo Cabral para educadores argentinos.">
+  <link rel="canonical" href="https://profesalrescate.com.ar/autonomia-perdida-ia.html">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="La Autonomía Perdida: Cómo la IA Destructiva Elimina las Capacidades que Construimos Escribiendo | Profes al Rescate">
+  <meta property="og:description" content="Análisis profundo sobre cómo la IA generativa destruye la autonomía intelectual en estudiantes universitarios.">
+  <meta property="og:url" content="https://profesalrescate.com.ar/autonomia-perdida-ia.html">
+  <meta property="og:image" content="https://profesalrescate.com.ar/logo.png">
+  <style>
+    :root{--azul:#2323FF;--oscuro:#050510;--dark2:#0a0a1a;--blanco:#fff;--fondo:#f5f5ff;--gris:#5a5a8a;--borde:#e0e0f5;--texto:#0f0f2a;--verde:#10b981;--rojo:#ef4444;--acento:#f59e0b;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito',sans-serif;background:var(--blanco);color:var(--texto);line-height:1.75;}
+
+    nav{background:var(--oscuro);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(35,35,255,.2);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:36px;width:auto;display:block;}
+    .nav-logo span{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#fff;letter-spacing:.05em;}
+    .nav-links{display:flex;gap:1.5rem;align-items:center;}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;}
+    .nav-links a:hover{color:#fff;}
+    .nav-cta{background:var(--azul);color:white!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;}
+
+    /* HERO */
+    .article-hero{background:var(--oscuro);padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden;}
+    .article-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(35,35,255,0.06);}
+    .article-cat{display:inline-block;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#34d399;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.35rem .9rem;border-radius:30px;margin-bottom:1.25rem;}
+    .article-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5.5vw,4rem);line-height:1.02;color:#fff;letter-spacing:.02em;margin-bottom:1rem;max-width:780px;margin-left:auto;margin-right:auto;}
+    .article-hero h1 .verde{color:#34d399;}
+    .article-meta{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+    .meta-item{font-size:.82rem;color:#8888bb;}
+    .article-intro{color:#8888bb;font-size:1rem;max-width:640px;margin:0 auto;line-height:1.75;}
+    .article-intro b{color:#fff;}
+
+    /* STAT CHIP */
+    .stat-chip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(35,35,255,.15);border:1px solid rgba(35,35,255,.3);color:#8888ff;font-size:.85rem;font-weight:700;padding:.5rem 1rem;border-radius:30px;margin-top:1.5rem;}
+
+    /* WRAP */
+    .article-wrap{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem;}
+
+    /* TIPOGRAFÍA ARTÍCULO */
+    .article-wrap p{font-size:.97rem;color:#3a3a5a;line-height:1.8;margin-bottom:1.4rem;}
+    .article-wrap h2{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--texto);letter-spacing:.02em;margin:2.5rem 0 1rem;line-height:1.1;}
+    .article-wrap h2 .verde{color:var(--verde);}
+    .article-wrap h2 .azul{color:var(--azul);}
+
+    /* INTRO BOX */
+    .intro-box{background:var(--fondo);border-left:4px solid var(--verde);border-radius:0 12px 12px 0;padding:1.5rem 1.75rem;margin-bottom:2.5rem;}
+    .intro-box p{font-size:.93rem;color:var(--gris);margin-bottom:0;}
+
+    /* HIGHLIGHT BOXES */
+    .hl-box{border-radius:12px;padding:1.25rem 1.5rem;margin:2rem 0;display:flex;gap:1rem;align-items:flex-start;}
+    .hl-verde{background:#f0fdf4;border:1px solid #86efac;}
+    .hl-amarillo{background:#fffbeb;border:1px solid #fde68a;}
+    .hl-rojo{background:#fff1f2;border:1px solid #fca5a5;}
+    .hl-azul{background:#eff6ff;border:1px solid #93c5fd;}
+    .hl-icon{font-size:1.5rem;flex-shrink:0;}
+    .hl-verde .hl-text{color:#14532d;font-size:.9rem;line-height:1.65;}
+    .hl-amarillo .hl-text{color:#78350f;font-size:.9rem;line-height:1.65;}
+    .hl-rojo .hl-text{color:#991b1b;font-size:.9rem;line-height:1.65;}
+    .hl-azul .hl-text{color:#1e40af;font-size:.9rem;line-height:1.65;}
+    .hl-text b{font-weight:800;}
+
+    /* QUOTE */
+    .article-quote{background:var(--oscuro);border-radius:16px;padding:2rem 2.5rem;margin:2.5rem 0;position:relative;}
+    .article-quote::before{content:'"';position:absolute;top:-10px;left:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:6rem;color:rgba(35,35,255,.15);line-height:1;}
+    .article-quote p{font-size:1.1rem;color:#fff;font-weight:700;line-height:1.6;margin-bottom:.5rem;}
+    .article-quote .quote-source{font-size:.8rem;color:#8888bb;}
+
+    /* CTA */
+    .cta-inline{background:var(--oscuro);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;}
+    .cta-inline h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:#fff;margin-bottom:.75rem;}
+    .cta-inline h3 .verde{color:#34d399;}
+    .cta-inline p{color:#8888bb;font-size:.9rem;margin-bottom:1.5rem;max-width:420px;margin-left:auto;margin-right:auto;}
+    .btn-cta{display:inline-block;background:var(--azul);color:white;text-decoration:none;padding:.85rem 2rem;border-radius:10px;font-weight:800;font-size:.95rem;box-shadow:0 0 25px rgba(35,35,255,.4);transition:all .2s;}
+    .btn-cta:hover{background:#3333ff;transform:translateY(-2px);}
+
+    /* AUTHOR */
+    .author-box{background:var(--fondo);border-radius:14px;padding:1.5rem;display:flex;gap:1.25rem;align-items:center;margin:2.5rem 0;}
+    .author-avatar{width:56px;height:56px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+    .author-name{font-weight:800;font-size:.95rem;color:var(--texto);}
+    .author-bio{font-size:.82rem;color:var(--gris);line-height:1.5;margin-top:.2rem;}
+
+    /* MULTI AUTOR */
+    .multi-author{display:flex;flex-direction:column;gap:1rem;}
+
+    /* REFERENCIAS */
+    .refs{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:1.5rem;margin-top:2rem;}
+    .refs-title{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-bottom:.75rem;}
+    .refs ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+    .refs li{font-size:.82rem;color:var(--gris);padding-left:1rem;position:relative;line-height:1.55;}
+    .refs li::before{content:'→';position:absolute;left:0;color:var(--verde);}
+
+    footer{background:var(--dark2);border-top:1px solid rgba(35,35,255,.1);padding:2rem;text-align:center;}
+    footer a{color:#8888bb;text-decoration:none;font-size:.85rem;margin:0 .75rem;}
+    footer a:hover{color:#fff;}
+    .footer-copy{color:#555588;font-size:.78rem;margin-top:.75rem;}
+
+    @media(max-width:700px){
+      .nav-links{display:none;}
+      .article-wrap{padding:2rem 1.25rem 4rem;}
+      .article-hero{padding:3rem 1.25rem 2rem;}
+      .author-box{flex-direction:column;text-align:center;}
+      .multi-author{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Profes al Rescate">
+    <span>Profes al Rescate</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="correccion-tesis.html">Corrección</a>
+    <a href="precios.html">Precios</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="https://wa.link/jw4qgl" target="_blank" class="nav-cta">WhatsApp →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="article-hero">
+  <div class="article-cat">🤖 IA y universidad</div>
+  <h1>LA AUTONOMÍA PERDIDA</h1>
+  <p style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:1.5rem;letter-spacing:.02em;">Cómo la IA destructiva elimina las capacidades que construimos escribiendo</p>
+  <div class="article-meta">
+    <span class="meta-item">✍️ Prof. Patricia Rodríguez y Prof. Rodolfo Cabral</span>
+    <span class="meta-item">📅 Junio 2026</span>
+    <span class="meta-item">⏱ 12 min</span>
+  </div>
+  <span class="stat-chip">📖 Ensayo académico sobre educación superior</span>
+</div>
+
+<div class="article-wrap">
+
+  <p>¿Qué ocurre realmente cuando escribimos un texto académico? ¿Se trata únicamente de la generación de palabras coherentes dispuestas en la pantalla, o hay un proceso más profundo de transformación intelectual que ocurre mientras reestructuramos argumentos, buscamos nuevas conexiones entre ideas, y descubrimos que lo que creíamos entender no era tan claro como parecía? ¿Es posible que el verdadero aprendizaje no resida en el documento final, sino en el camino que recorrimos para llegar a él?</p>
+
+  <p>Durante estos años trabajando con estudiantes de variadas carreras de corte social, hemos observado algo que genera inquietud: la confusión creciente entre "tener un documento listo" y "haber aprendido algo". La IA generativa hizo que esa confusión sea casi imposible de detectar. Un texto que parece sólido, coherente, académicamente correcto. Pero detrás no hay nadie. No hay pensamiento. No hay proceso. Hay generación automática de palabras que imitan la estructura de la inteligencia sin contener ninguna inteligencia real. ¿Qué sucede con las necesidades intelectuales de los estudiantes que deciden asumir un rol pasivo frente al conocimiento?</p>
+
+  <h2>LA AUTONOMÍA EN LA ESCRITURA: <span class="verde">MÁS ALLÁ DE LA PRODUCCIÓN DE TEXTO</span></h2>
+
+  <p>Cuando hablamos de autonomía en la escritura académica, no nos referimos a una habilidad decorativa o un lujo pedagógico que sería bueno desarrollar. Hablamos del espacio fundamental donde ocurre el desarrollo de dos capacidades que ninguna máquina puede reemplazar: las capacidades tácitas y las capacidades explícitas.</p>
+
+  <p>Las capacidades tácitas son aquellas que operan en silencio, sin ser completamente conscientes, pero que transforman la forma en que pensamos. Son el resultado de la reestructuración temática — cuando quien escribe gira un problema desde distintos ángulos, lo ve desde perspectivas que no había considerado inicialmente, y descubre que la pregunta misma que formuló no era la pregunta correcta. Son el reenfoque del desarrollo temático, ese momento en el cual, en la tercera lectura de lo que escribió, aparece un hilo argumentativo nuevo que no estaba visible antes. Son las conexiones entre ideas que emergen no porque se lea más material, sino porque se escribe, se borra, se reescribe. Es el cambio cualitativo del pensamiento que Vigotski describía cuando señalaba que "el pensamiento no se expresa simplemente en palabras, sino que existe a través de ella". Este proceso silencioso es donde realmente se aprende a pensar.</p>
+
+  <p>Las capacidades explícitas, por su parte, son el resultado visible y consciente de ese trabajo tácito. Son la comprensión de que lo que se ha construido es personal, único, que aporta un análisis nuevo — no porque sea "original" en sentido formalista, sino porque es resultado del proceso propio de quien escribe. Cuando alguien llega a comprender que su análisis de un problema es genuinamente suyo, que proviene de su forma particular de procesar información y de su capacidad de conexión, adquiere una autoridad intelectual que no puede delegarse a ninguna herramienta. Es la conciencia de haber pensado, no solo de haber leído.</p>
+
+  <h2>EL PROBLEMA FUNDAMENTAL: <span class="azul">EFICIENCIA CONFUNDIDA CON APRENDIZAJE</span></h2>
+
+  <p>Aquí emerge el problema central que observamos constantemente. Un estudiante llega a ChatGPT con una pregunta, obtiene una respuesta procesada, coherente, ya resuelta. La copia, la adapta ligeramente, la entrega. Desde el exterior parece un trabajo académico legítimo. Tiene estructura formal, vocabulario académico, argumentación que sigue una lógica sintácticamente correcta. Parece competente.</p>
+
+  <p>Pero ¿qué ocurrió exactamente en la mente de quien lo "escribió"? No hubo reestructuración de tema porque no hubo tema que reestructurar — simplemente se recibió la reestructuración lista. No hubo reenfoque porque no hubo enfoque inicial que repensar. No hubo esas nuevas conexiones entre ideas que surgen precisamente cuando nos enfrentamos a la dificultad de expresar algo complejo con nuestras propias palabras. No hubo cambio cualitativo en el pensamiento porque no hubo pensamiento en desarrollo. Hubo eficiencia pura. Hubo copia sofisticada.</p>
+
+  <p>Y lo más grave: el estudiante no percibe lo que perdió. Porque el documento existe. Está ahí, impecable en su estructura, irreprochable en su coherencia. Las capacidades tácitas — ese desarrollo silencioso del pensamiento que ocurre en la reescritura, en la búsqueda de palabras, en el descubrimiento de que la idea que se tenía no era tan clara como se creía — no ocurrieron.</p>
+
+  <div class="hl-box hl-rojo">
+    <div class="hl-icon">⚠️</div>
+    <div class="hl-text"><b>Lo más grave:</b> El estudiante no percibe lo que perdió. Porque el documento existe. Está ahí, impecable en su estructura. Las capacidades tácitas — ese desarrollo silencioso del pensamiento — no ocurrieron.</div>
+  </div>
+
+  <p>Los investigadores que han analizado este fenómeno en educación superior lo plantean con claridad. Cuando la IA sustituye al estudiante en el acto de aprender, no solo ocurre un fraude académico administrativo. Ocurre un fraude contra el propio desarrollo cognitivo. Como señalan Ubal y sus colegas, "el alumnado adoptaría un rol pasivo, convirtiéndose en un mero consumidor de respuestas prefabricadas", lo que afecta no solo a la evaluación, sino fundamentalmente a "su autoconcepto como estudiante, en la satisfacción por realizar un trabajo propio, en el sentido del esfuerzo, y en su capacidad para actuar en autonomía". La máquina no solo entrega un producto. Desactiva el proceso donde se construye la autonomía intelectual.</p>
+
+  <h2>LA CUESTIÓN DE LA DECODIFICACIÓN Y RECODIFICACIÓN</h2>
+
+  <p>Existe un nivel adicional de análisis que merece atención. Cuando escribimos, decodificamos — extraemos significado de lo que leemos, lo procesamos a través de nuestro pensamiento — y luego recodificamos — expresamos ese significado procesado en nuestras propias palabras y construcciones argumentativas. Este ciclo de decodificación-recodificación es donde ocurre el aprendizaje real.</p>
+
+  <p>La IA generativa rompe este ciclo. No decodifica en el sentido en que lo hace un estudiante. No procesa información a través de su propia estructura de pensamiento. Genera patrones estadísticos basados en datos históricos. Cuando un estudiante copia la salida de la IA sin que le preceda su propio proceso de decodificación, la recodificación nunca ocurre. El pensamiento nunca se hace propio.</p>
+
+  <p>Lo que sucede es una ilusión, el documento parece producto de recodificación genuina porque está "bien, aceptablemente" escrito, porque sigue las convenciones académicas. Pero no hay nadie detrás que haya decodificado realmente. Simplemente hay un output estadístico que imita la estructura de la recodificación.</p>
+
+  <div class="hl-box hl-azul">
+    <div class="hl-icon">🔄</div>
+    <div class="hl-text"><b>Decodificación-recodificación:</b> Este ciclo es donde ocurre el aprendizaje real. La IA generativa rompe este ciclo sin que el estudiante se percate.</div>
+  </div>
+
+  <h2>EL CAMBIO CUALITATIVO <span class="verde">ES LO QUE PERSISTE</span></h2>
+
+  <p>Aquí llegamos al punto que nos parece más importante. El cambio cualitativo en el pensamiento que ocurre durante la escritura autónoma no desaparece cuando se termina el documento. Persiste. Modifica la estructura de pensamiento de quien lo escribe. Cuando alguien ha pasado por el proceso de escribir una tesis sobre un tema, esa persona no es la misma que antes de escribir. Ha desarrollado capacidades de análisis, de conexión de ideas, de reconocimiento de complejidades, que permanecerán.</p>
+
+  <p>Por el contrario, cuando alguien delega la escritura a la IA, el cambio cualitativo no ocurre. El documento existe, pero la persona es la misma después de entregarlo que antes de escribirlo. Ha gastado tiempo. Pero no ha aprendido. Ha conseguido una calificación, pero no ha desarrollado autonomía.</p>
+
+  <p>Esto es particularmente grave en educación superior, donde precisamente lo que debería ocurrir es la construcción de pensadores autónomos, no productores de documentos. Los estudiantes necesitan desarrollar la capacidad de analizar problemas sociales complejos de forma independiente, de conectar teoría con realidad, de generar análisis originales. Cuando delegan la escritura a la IA, no desarrollan esas capacidades. Obtienen una calificación, pero pierden su futuro profesional.</p>
+
+  <h2>LO QUE LA IA DESTRUYE <span class="azul">SIN SER VISIBLE</span></h2>
+
+  <p>Hay algo particular que sucede cuando nosotros — como comunidad académica — permitimos el uso no crítico de la IA: estamos permitiendo que estudiantes avancen sin haber desarrollado la capacidad de decodificación crítica.</p>
+
+  <p>Esto significa, en concreto, que un estudiante que delega la escritura a ChatGPT u otra IA probablemente no está decodificando los textos que supuestamente está "investigando" para su trabajo. Está seleccionando fragmentos que la IA sugiere, sin procesar realmente esa información a través de su pensamiento. Cuando llegue a trabajar, cuando necesite analizar un caso de intervención social, cuando requiera conectar teoría con la realidad que observa, descubrirá que no tiene esa capacidad. Porque nunca la construyó. Nunca pasó por el proceso donde se construye.</p>
+
+  <p>La decodificación no es una habilidad que se desarrolla "en paralelo" a la escritura IA. Es parte del mismo proceso. Si se elimina la escritura autónoma, se elimina simultáneamente la decodificación genuina.</p>
+
+  <div class="hl-box hl-amarillo">
+    <div class="hl-icon">💡</div>
+    <div class="hl-text"><b>Punto clave:</b> La decodificación no es una habilidad que se desarrolla "en paralelo" a la escritura IA. Es parte del mismo proceso. Si se elimina la escritura autónoma, se elimina la decodificación genuina.</div>
+  </div>
+
+  <h2>¿ENTONCES QUÉ SIGNIFICA <span class="verde">ESCRIBIR ACADÉMICAMENTE?</span></h2>
+
+  <p>Para nosotros, escribir académicamente significa someterse a un proceso que incluye incertidumbre. Significa comenzar sin saber exactamente hacia dónde se va. Significa escribir, leer lo que se escribió, descubrir que no es lo que se pensaba, reescribir. Significa encontrar conexiones nuevas entre lecturas que parecían desconectadas. Significa el cambio cualitativo de la comprensión.</p>
+
+  <p>La IA puede estar presente en este proceso, pero solo en momentos específicos, después de que el proceso sustancial ya ocurrió. Es factible buscar y sondear bibliografía o acceso a fuentes de investigación fidedignas y oficiales, puede ayudar a revisar coherencia de un párrafo que nosotros ya escribimos. Del mismo modo, puede sugerir una reformulación de una idea que nosotros ya procesamos. Pero no puede substituir el proceso mismo sin destruir el aprendizaje.</p>
+
+  <h2>LA RESPONSABILIDAD INSTITUCIONAL: <span class="azul">REGULACIÓN SIN PROHIBICIÓN</span></h2>
+
+  <p>Nosotros como institución — como profesores, como directores de programas, como responsables de la formación académica — enfrentamos una pregunta incómoda: ¿permitimos que los estudiantes avancen en sus carreras sin haber desarrollado autonomía en la escritura y pensamiento crítico?</p>
+
+  <p>No se trata de prohibir la IA (no se puede prohibir lo ya instalado y con acceso total), se trata de establecer contextos claros sobre cuándo es herramienta y cuándo es substituto. Se trata de evaluaciones que detecten la diferencia entre escritura autónoma asistida y sustitución de proceso por generación automática. Se trata de ser honestos sobre qué estamos permitiendo que ocurra.</p>
+
+  <p>Gallent-Torres y sus colegas lo dicen claramente: las instituciones de educación superior deben "asumir un compromiso ético consigo mismos y con su profesión" en relación con estas herramientas. Esto significa que nosotros — profesores, evaluadores — tenemos la responsabilidad de diseñar evaluaciones que garanticen que el proceso de autonomía intelectual realmente ocurrió.</p>
+
+  <h2>LA AUTONOMÍA ES PROCESO NECESARIO, <span class="verde">NO UN OBSTÁCULO</span></h2>
+
+  <p>Lo que estamos viendo es una generación completa que puede generar documentos sin generar pensamiento. Y eso no es un problema administrativo de integridad académica únicamente — aunque también lo es. Es un problema existencial para la educación misma.</p>
+
+  <p>La autonomía en la escritura es el proceso donde se construye la capacidad de pensar de forma propia. Es donde se desarrollan las herramientas tácitas que ningún curso puede enseñar directamente. Es donde ocurren esos cambios cualitativos del pensamiento que persisten para el resto de la vida profesional.</p>
+
+  <p>Cuando un estudiante delega ese proceso a una máquina, no está siendo eficiente. Se está extirpando a sí mismo la posibilidad de desarrollarse como pensador autónomo.</p>
+
+  <p>Nuestra propuesta es simple: escriban primero. Piensen en voz propia. Reestructuren sus argumentos. Busquen nuevas conexiones. Dejen que el documento los sorprenda con lo que aprendieron en el proceso de escribirlo. Solo después — si realmente lo necesitan — utilicen IA como herramienta de refinamiento, no como sustituto del proceso.</p>
+
+  <p>La calidad de un trabajo académico no se mide por cuán pulido está. Se mide por cuánto aprendió quien lo escribió en el proceso de construirlo. Y ese aprendizaje solo ocurre cuando la autonomía intelectual está presente.</p>
+
+  <div class="article-quote">
+    <p>Preferimos estudiantes que escriben de forma autónoma, aunque sus documentos sean menos perfectos, antes que estudiantes con documentos impecables pero sin pensamiento detrás. Porque los primeros podrán pensar en el futuro. Los segundos no.</p>
+    <div class="quote-source">— Prof. Patricia Rodríguez y Prof. Rodolfo Cabral</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-inline">
+    <h3>¿NECESITÁS ACOMPAÑAMIENTO EN TU<br><span class="verde">PROCESO DE ESCRITURA AUTÓNOMA?</span></h3>
+    <p>En Profes al Rescate trabajamos para que tu tesis sea genuinamente tuya — pensada, escrita, aprendida por vos.</p>
+    <a href="https://wa.link/jw4qgl" target="_blank" class="btn-cta">Consultar sin cargo →</a>
+  </div>
+
+    <!-- AUTORES -->
+  <div class="multi-author">
+    <div class="author-box">
+      <div class="author-avatar">👩‍🏫</div>
+      <div>
+        <div class="author-name">Prof. Patricia Rodríguez — Profes al Rescate</div>
+        <div class="author-bio">Especialista en educación superior y pedagogía crítica. 30 años de experiencia acompañando estudiantes en sus procesos de investigación académica. Cofundadora de Profes al Rescate.</div>
+      </div>
+    </div>
+    <div class="author-box">
+      <div class="author-avatar">👨‍🏫</div>
+      <div>
+        <div class="author-name">Prof. Rodolfo Cabral — Profes al Rescate</div>
+        <div class="author-bio">30 años de experiencia en educación superior argentina. Especialista en Ciencias Sociales, metodología de investigación y acompañamiento académico. Cofundador de Profes al Rescate junto a la Prof. Patricia Rodríguez.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="refs">
+    <div class="refs-title">Bibliografía</div>
+    <ul>
+      <li>Caballero-Cantu, J. J., Chavez-Ramirez, E. D., Lopez-Almeida, M. E., Inciso-Mendo, E. S., & Méndez Vergaray, J. (2023). El aprendizaje autónomo en educación superior. Revisión sistemática. <em>Salud, Ciencia y Tecnología</em>, 3, 391. https://doi.org/10.56294/saludcyt2023391</li>
+      <li>Ubal, M., Tambasco, P., Martínez, S., & García, M. (2023). El impacto de la Inteligencia Artificial en la educación. Riesgos y potencialidades de la IA en el aula. <em>RiiTE Revista Interuniversitaria de Investigación en Tecnología Educativa</em>, 15, 41-57. https://doi.org/10.6018/riite.584501</li>
+      <li>Gallent-Torres, C., Zapata-González, A., & Ortego-Hernando, J. L. (2023). El impacto de la inteligencia artificial generativa en educación superior: una mirada desde la ética y la integridad académica. <em>RELIEVE</em>, 29(2), M5. http://doi.org/10.30827/relieve.v29i2.29134</li>
+      <li>Vigotski, L. S. (1995). <em>Pensamiento y lenguaje</em>. La Pléyade.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <a href="index.html">Inicio</a>
+    <a href="correccion-tesis.html">Corrección de Tesis</a>
+    <a href="precios.html">Precios</a>
+    <a href="metodologia-de-investigacion.html">Metodología</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://www.instagram.com/profes_al_rescate/" target="_blank">Instagram</a>
+    <a href="https://wa.link/jw4qgl" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2026 Profes al Rescate · Asesoría Académica · Argentina</div>
+</footer>
+</body>
+</html>
