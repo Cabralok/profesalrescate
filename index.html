@@ -1516,5 +1516,36 @@
   });
 </script>
 
+<!-- Meta Pixel: Eventos de conversión (WhatsApp = Contact, Tally = Lead) -->
+<script>
+  // 1) Clic en cualquier link de WhatsApp -> evento Contact
+  document.querySelectorAll('a[href="https://wa.link/jw4qgl"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
+      }
+    });
+  });
+
+  // 2) Envío del formulario de Tally -> evento Lead
+  //    Tally notifica al padre vía postMessage cuando se completa el formulario.
+  var talyLeadSent = false;
+  window.addEventListener('message', function(event) {
+    if (talyLeadSent) return;
+    var data = event.data;
+    try {
+      if (typeof data === 'string') data = JSON.parse(data);
+    } catch (e) {
+      return;
+    }
+    if (data && data.event === 'Tally.FormSubmitted') {
+      talyLeadSent = true;
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
